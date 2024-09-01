@@ -15,7 +15,7 @@ export class BillingService {
 
   handleOrderCreated(orderCreatedEvent: OrderCreatedEvent) {
     this.authClient
-      .send('get_user', new GetUSerRequest(orderCreatedEvent.orderId))
+      .send('get_user', new GetUSerRequest(orderCreatedEvent.userId))
       .subscribe((user) => {
         console.log(
           `Billing user with stripe ID ${user.stripeUserId} a price of $${orderCreatedEvent.price}.`,
