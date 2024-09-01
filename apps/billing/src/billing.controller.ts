@@ -13,6 +13,6 @@ export class BillingController {
 
   @EventPattern('order_created')
   handleOrderCreated(data: any) {
-    this.billingService.handleOrderCreated(data.value);
+    this.billingService.handleOrderCreated(data);
   }
 }
